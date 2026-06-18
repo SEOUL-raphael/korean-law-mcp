@@ -1,0 +1,14 @@
+name = "korean-law-worker"
+main = "src/index.ts"
+compatibility_date = "2025-04-30"
+compatibility_flags = ["nodejs_compat"]
+account_id = "4543f50f1421947e6f192cb3b2d1d1eb"
+
+[vars]
+ALLOWED_ORIGIN = "https://SEOUL-raphael.github.io"
+AI_INTEGRATIONS_OPENAI_BASE_URL = "https://api.minimax.io/v1"
+AI_MODEL = "MiniMax-M2.7"
+
+# 시크릿 등록 방법 (배포 후 실행):
+# npx wrangler secret put MINIMAX_API_KEY
+# npx wrangler secret put LAW_OC
