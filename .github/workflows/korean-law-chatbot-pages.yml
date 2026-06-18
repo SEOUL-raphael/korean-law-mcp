@@ -22,20 +22,18 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: "artifacts/korean-law-chatbot/package-lock.json"
+          node-version: "24"
 
       - name: Install dependencies
         working-directory: artifacts/korean-law-chatbot
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Build
         working-directory: artifacts/korean-law-chatbot
         run: npm run build
         env:
           NODE_ENV: production
-          VITE_WORKER_URL: ${{ vars.VITE_WORKER_URL || 'https://korean-law-worker.workers.dev' }}
+          VITE_WORKER_URL: ${{ vars.VITE_WORKER_URL || 'https://korean-law-worker.neoulneoul.workers.dev' }}
 
       - uses: actions/configure-pages@v5
 
